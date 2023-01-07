@@ -1,0 +1,59 @@
+.InputField {
+  display: flex;
+  flex-direction: column;
+  height: 20%;
+
+  * {
+    color: white;
+  }
+
+  label {
+    margin-bottom: 0.25rem;
+  }
+
+
+  span {
+    margin-top: 0.125rem;
+    width: 60%;
+    font-size: 0.90rem;
+    color: coral;
+    display: none;
+  }
+
+  input {
+    padding: 0.75rem;
+    width: 60%;
+
+    background-color: transparent;
+
+    border: none;
+    outline: none;
+    background: #333;
+
+    border-bottom: 0.125rem solid gray;
+    border-radius: 0.25rem;
+
+    transition: border 70ms, background-color 70ms;
+
+    &.beenFocused:invalid {
+      border-color: coral;
+    }
+
+    &:valid {
+      border-color: lightgreen;
+    }
+
+    &:hover{
+      border-color: orange;
+    }
+
+    &:focus {
+      border-color: darkorange;
+      background: #111;
+    }
+
+    &:invalid ~ span {
+      display: block
+    }
+  }
+}

@@ -1,0 +1,42 @@
+$bg: #242424;
+$bg-dark: #111;
+
+.Register {
+  display: flex;
+  height: 60rem;
+  justify-content: center;
+  align-items: center;
+
+  .wrapper {
+    display: grid;
+    width: 50rem;
+    height: 70%;
+    grid-template-rows: 90% 10%;
+    grid-template-columns: 30% 70%;
+    padding: 2rem;
+    background-color: $bg;
+    border-radius: 0.25rem;
+
+    .navButtons {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      grid-column-start: 2;
+
+      button {
+        color: white;
+        background-color: $bg;
+        padding: 1rem;
+        border: 0.125rem solid grey;
+        border-radius: 0.25rem;
+        width: 8rem;
+
+        &:hover, &:focus {
+          background-color: $bg-dark;
+          border-color: white;
+          transition: 100ms;
+        }
+      }
+    }
+  }
+}

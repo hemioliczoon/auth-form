@@ -1,0 +1,46 @@
+$bg: #242424;
+$bg-dark: #111;
+
+.Login {
+  display: flex;
+  height: 60rem;
+  justify-content: center;
+  align-items: center;
+
+  form {
+    border-radius: 0.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    padding: 4rem;
+    background-color: $bg;
+
+    h4 {
+      line-height: 0.25rem;
+    }
+
+    * {
+      color: white;
+      border-radius: 0.25rem;
+      border: none;
+    }
+
+    input {
+      padding: 0.5rem;
+      color: black;
+    }
+
+    button {
+      background-color: $bg;
+      padding: 1rem;
+      border: 0.125rem solid grey;
+      border-radius: 0.25rem;
+      
+      &:hover, &:focus {
+        background-color: $bg-dark;
+        border-color: white;
+        transition: 100ms;
+      }
+    }
+  }
+}

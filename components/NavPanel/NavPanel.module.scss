@@ -1,0 +1,67 @@
+.NavPanel {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 3rem;
+  * {
+    color: white;
+  }
+
+  label {
+    position: relative;
+
+    &:hover > .circle {
+      background-color: gray;
+    }
+
+
+    input {
+      position: absolute;
+      width: 0;
+      height: 0;
+
+      &:checked ~ .circle {
+        background-color: darkorange;
+      }
+
+      &:focus ~ .background  {
+        border-color: #888;
+      }
+
+    }
+
+    p {
+      margin-left: 2rem;
+      z-index: 10;
+    }
+
+    .background {
+      margin: auto;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+
+      border-bottom: 0.125rem solid transparent;
+      border-radius: 0.25rem;
+
+      z-index: 3;
+
+    }
+
+    .circle {
+      position: absolute;
+      top: calc(50% - 0.5 * 1.25rem);
+      
+      width: 1.25rem;
+      height: 1.25rem;
+      border-radius: 50%;
+      background-color: #333;
+      transition: 150ms;
+
+      z-index: 10;
+    }
+
+  }
+}

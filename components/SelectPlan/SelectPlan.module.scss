@@ -1,0 +1,145 @@
+$bg: #242424;
+$bg-dark: #111;
+
+@mixin div-absolute() {
+  position: relative;
+  div {
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    width: 100%;
+    height: 100%;
+  }
+
+}
+
+.SelectPlan {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  * {
+    color: white;
+  }
+
+  .switch {
+    @include div-absolute();
+    display: flex;
+    justify-content: center;
+    width: 40%;
+    margin: auto;
+
+    gap: 6rem;
+
+    h4 {
+      width: 5rem;
+      color: gray;
+      text-align: center;
+    }
+
+    .yearlySelected {
+      color: white;
+      transition: 100ms;
+    }
+
+    input {
+      position: absolute;
+      width: 0;
+      height: 0;
+
+      &:checked ~ div::after {
+        left: calc(5rem - 1.75rem - 0.6rem);
+      }
+
+      &:focus ~ div {
+        border-color: orange;
+      }
+    }
+
+    div {
+      width: 5rem;
+      height: 2.5rem;
+      background-color: #333;
+      display: flex;
+      align-items: center;
+      border-radius: 3rem;
+      border: 0.125rem solid $bg;
+      transition: 100ms;
+
+      &:hover {
+        border-color: orange;
+      }
+
+      &::after {
+        position: absolute;
+        content: "";
+
+        left: 0.3rem;
+
+        width: 1.75rem;
+        height: 1.75rem;
+
+        border-radius: 50%;
+        background-color: white;
+
+        transition: 150ms;
+      }
+    }
+  }
+
+  .plans {
+    display: flex;
+    justify-content: space-around;
+    gap: 1rem;
+    height: 50%;
+
+    label {
+      width: 100%;
+      height: 100%;
+      @include div-absolute();
+
+      input {
+        width: 0;
+        height: 0;
+        position: absolute;
+
+        &:focus ~ div {
+          background-color: $bg-dark;
+        }
+
+        &:checked ~ div {
+          border-color: darkorange;
+          transform: scale(1);
+        }
+      }
+
+      div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        background-color: #333;
+        
+        border-radius: 0.25rem;
+        border-bottom: 0.5rem solid grey;
+
+        transition: 100ms ease-out;
+
+        &:hover {
+          background-color: $bg-dark;
+          border-color: orange;
+          transform: scale(1.05);
+        }
+
+        h4 {
+          text-align: center;
+          z-index: 10;
+        }
+      }
+    }
+  }
+}
